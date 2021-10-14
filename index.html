@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Visualizing Chess Outcomes</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <!-- CSS Reset -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <!-- Milligram CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+        <!-- Main file. -->
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Chess Database Visualization</h1>
+
+            </div>
+            <div class="row">
+                <div class='tableauPlaceholder' id='viz1634158095321' style='position: relative'><noscript><a href='#'><img alt='Winning in Chess ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ch&#47;ChessWorkbook&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ChessWorkbook&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ch&#47;ChessWorkbook&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1634158095321');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+            </div>
+
+            <div class="row">
+                <h3>Reflections</h3>
+            </div>
+
+            <div class="row">
+                <h5>Data Selection</h5>
+            </div>
+            <div class="row">
+                <div class="column">
+                    We chose the Chess dataset because we were curious to gain a better understanding of the strategies used to win the game, the types of openings are popular, and the relationships between color, skill and opening. While it is a simple game, there are constantly new things being learned about the game. We decided to take a deeper look at the lichess database to see what we could gather. Lichess is a free to play online chess website and hosts a wide range of chess players, from the top players in the world to beginners. 
+
+                    The data set did not have any missing field values so we did not have to remove data points. However there were a couple columns we had to calculate/clean up. The main one was the names of the openings. Due to all the different variations of openings, there were 1,477 unique opening names in the original dataset. After combining some of these variations into their parent opening, it reduced this down to only 227 unique names. Finally we decided to exclude opens from the graphs that had less than 100 games played with them, as the bars were too small to gather any meaningful data.
+                </div>
+                <div class="column">
+                    <img src="image2.png">
+                    <img src="image3.png">
+                </div>
+            </div>
+            <div class="row">
+                <h5>Exploration</h5>
+            </div>
+            <div class="row">
+                <div class="column">
+                    We explored the data and for our visualization narrative we decided to use the information available to see how different factors impact winning. In the end we decided to look into the color of pieces, opening style, and opening sequences. Further digging into this area, we split up the games in the dataset into the users rating levels, to see if there was any difference between low level games and high level games. We created 8 worksheets with pie charts and bar charts. 
+                    We wanted to create a heat map for all the squares on the board that would display how often they are occupied, to show us the most popular destinations for moves during the game, however making the visual into a chess board would have been very difficult, as well as searching through the dataset in order to extract the position of each piece at every point in the game. Another issue we ran into cleaning the data was trying to see relationships between rating and other variables, such as number of turns. To get rid of the noise, we could have clustered some of the ratings together, but we weren’t able to figure out how to effectively perform this task. There were a couple of relationships between number of turns and other variables we were thinking about adding, but they didn’t quite fit the narrative we were telling with factors for winning. For example, number of moves and which piece one the game/if there was a tie. Number of moves in the opening and the users rating and just number of turns in a game in general. All things we began to explore, but decided to leave it out of the final story. 
+                </div>
+                <div class="column">
+                    <img src="image4.png">
+                </div>
+            </div>
+
+            <div class="row">
+                <h5>Explanation</h5>
+            </div>
+            <div class="row">
+                
+                <div class="column">
+                   Our first topic was about opening strategies and how often white wins. White is said to win 50% of the time, while 45% of the time black wins and 5% it is in a tie. This is generally considered standard, so we felt good the data had a decent representation of normal chess games. It was also interesting to see that white won by checkmate and resignation at about the same rate over black, but they both lost by timeout about the same number of times. So in fact the color of your piece does not seem to impact how often you’ll run out of time. Then we want to take a look at which opening the players decide to play and how that would impact the game. To get the reader more acclimated with chess openings, we gave a list of opening styles and their popularity and specific openings and their popularity. One thing that actually stood out was how popular the Sicilian Defense was, it was almost 3 times as popular as the Ruy Lopez which we thought was the most popular and twice as popular as the French Defense, which was in second place. It was then time to combine the winning data with the opening data and see which openings helped which pieces. As expected white tended to win every opening style, except “Flank” which was about 50/50. Getting into the specifics of the openings, of the variations that had at least 100 games, black only won 4 of the 18. We were expecting it to be closer to 7/18 but since one of the opening black wins is the Sicillian (the most popular by far) that’s likely how it’s win rate is closer to 45%. Finally we took the quality of the players in the game into account. As the skill got higher, even the flank opening style which appeared to be even for black shifted into white’s favor for strong players. When looking at the individual openings, a trend of white closing the gap on openings as the player level gets stronger can also be seen. This shows just how strong the white pieces are when extremely knowledgeable and practiced players play, being able to overcome normally disadvantageous beginnings of games.
+                </div>
+                <div class="column">
+                    <img src="image1.png">
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
+
+
